@@ -34,9 +34,10 @@
                                         	<td>{{ $row->id }}</td>
                                         	<td>{{ $row->name }}</td>
                                             <td>
-                                                @foreach($row->permissions()->pluck('name') as $permission)
-                                                    {{ $permission }},
-                                                @endforeach
+{{--                                                @foreach($row->permissions()->pluck('name') as $permission)--}}
+{{--                                                    {{ $permission }},--}}
+{{--                                                @endforeach--}}
+                                                {{ $row->permissions()->pluck('name')->implode(',') }}
                                             </td>
                                         	<td>
                                                 <div style="display:flex;">
